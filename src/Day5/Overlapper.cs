@@ -110,22 +110,6 @@ public class Overlapper
     {
         return !coordinates.Any(coordinate => coordinate.x == x || coordinate.y == y);
     }
-
-    private static void PrintMatrix(int[,] matrix)
-    {
-        // int rowLength = ;
-        // int colLength = matrix.GetLength(1);
-        //
-        // for (int i = 0; i < rowLength; i++)
-        // {
-        //     for (int j = 0; j < colLength; j++)
-        //     {
-        //         Console.Write(string.Format("{0} ", matrix[j, i]));
-        //     }
-        //     Console.Write(Environment.NewLine);
-        // }
-        // Console.ReadLine();
-    }
 }
 
 public record Instruction(Coordinate Start, Coordinate End)

@@ -40,7 +40,13 @@ public class Positioner
 
     private int CalculateEngineeredFuelUsage(int position)
     {
-        return _crabs.Select(crab => Math.Abs(position - crab))
-            .Select(steps => (steps * (steps + 1)) / 2).Sum();
+        var fuelUsage = 0;
+        foreach (var crab in _crabs)
+        {
+            var steps = Math.Abs(position - crab);
+            fuelUsage += steps * (steps + 1) / 2;
+        }
+
+        return fuelUsage;
     }
 }

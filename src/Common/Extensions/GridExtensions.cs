@@ -1,3 +1,4 @@
+using Common.Models;
 using System.Text;
 
 namespace Common.Extensions;
@@ -9,6 +10,15 @@ public static class GridExtensions
            && x < map.GetLength(0)
            && y >= 0
            && y < map.GetLength(1);
+
+    public static bool IsIn<T>(this T[,] map, Coordinate coordinate)
+        => coordinate.X >= 0
+           && coordinate.X < map.GetLength(0)
+           && coordinate.Y >= 0
+           && coordinate.Y < map.GetLength(1);
+
+    public static T CoordinateValue<T>(this T[,] map, Coordinate coordinate)
+        => map[coordinate.X, coordinate.Y];
 
     public static void Print(this int[,] map)
     {
